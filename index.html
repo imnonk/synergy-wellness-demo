@@ -111,19 +111,23 @@
     /* Dropdown */
     .dropdown {
       position: absolute;
-      top: calc(100% + 4px);
+      top: calc(100% + 8px);
       left: 0;
       min-width: 220px;
-      background: var(--white);
+      background: #ffffff;
       border-radius: 10px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.08);
       padding: 8px 0;
       list-style: none;
       opacity: 0;
       pointer-events: none;
       transform: translateY(-8px);
       transition: opacity 0.2s, transform 0.2s;
-      z-index: 100;
+      z-index: 9000;
+    }
+
+    .nav-main > li {
+      position: relative;
     }
 
     .nav-main > li:hover .dropdown {
@@ -1625,7 +1629,7 @@
       <!-- Brand -->
       <div>
         <div class="footer-logo">
-          <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness" />
+          <a href="index.html"><img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness" /></a>
         </div>
         <p class="footer-tagline">Tucson's only FDA-cleared Erchonia Laser Clinic. Non-invasive, drug-free pain relief backed by clinical science.</p>
         <img src="../images/a84e9c_1f5160d078ba42a5bde9f95aed41ccad.png" alt="5-Star Rated" style="height:44px; width:auto; margin-top:8px;" />
