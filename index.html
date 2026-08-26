@@ -136,6 +136,13 @@
       transform: translateY(0);
     }
 
+    /* Force reset ALL link styles inside dropdown */
+    .dropdown,
+    .dropdown * {
+      color: #1A1F2E !important;
+      text-decoration: none !important;
+    }
+
     .dropdown li a {
       display: block;
       padding: 10px 20px;
@@ -1153,6 +1160,24 @@
 
     section, .section, .section-inner, footer, header {
       overflow-x: hidden;
+    }
+  
+    /* Nuclear reset: force all dropdown content to dark on white */
+    .dropdown { color: #1A1F2E !important; }
+    .dropdown a,
+    .dropdown li,
+    .dropdown li a,
+    .dropdown li a:link,
+    .dropdown li a:visited,
+    .dropdown li a:hover,
+    .dropdown li a:active {
+      color: #1A1F2E !important;
+      text-decoration: none !important;
+      background-color: transparent;
+    }
+    .dropdown li a:hover {
+      background-color: #f0f4f8 !important;
+      color: #00505A !important;
     }
   </style>
 </head>
