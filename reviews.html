@@ -112,6 +112,7 @@
     }
 
     /* Dropdown */
+    .nav-main > li { position: relative; }
     .dropdown {
       position: absolute;
       top: calc(100% + 4px);
@@ -126,10 +127,11 @@
       pointer-events: none;
       transform: translateY(-8px);
       transition: opacity 0.2s, transform 0.2s;
-      z-index: 100;
+      z-index: 9000;
     }
 
-    .nav-main > li:hover .dropdown {
+    .nav-main > li:hover .nav-main > li { position: relative; }
+    .dropdown {
       opacity: 1;
       pointer-events: all;
       transform: translateY(0);
@@ -769,7 +771,7 @@
   <header class="site-header">
     <div class="header-top">
       <a href="index.html" class="logo-wrap">
-        <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness - Tucson Laser Therapy" />
+        <img src="images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness - Tucson Laser Therapy" />
       </a>
 
       <nav aria-label="Main navigation">
@@ -879,7 +881,7 @@
           <div class="testi-quote">"</div>
           <p class="testi-text">I feel fortunate to have connected with Synergy Wellness. I love the philosophy of treat the whole person NOT the symptoms. I feel like I have a solid partner working with me to achieve my optimum health.</p>
           <div class="testi-author">
-            <img src="../images/a84e9c_b4f237471b574a5e9fa2e49c62cb5880.jpg" alt="Denise M." class="testi-avatar" />
+            <img src="images/a84e9c_b4f237471b574a5e9fa2e49c62cb5880.jpg" alt="Denise M." class="testi-avatar" />
             <div>
               <div class="testi-name">Denise M.</div>
               <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -907,7 +909,7 @@
           <div class="testi-quote">"</div>
           <p class="testi-text">Thank you for all you do for so many! So glad to have finally found someone that makes so much overall sense with regards to a healthy way to approach good health!</p>
           <div class="testi-author">
-            <img src="../images/a84e9c_272c45364a4a4f399b0c72ab197fb5cc.jpg" alt="Nancy S." class="testi-avatar" />
+            <img src="images/a84e9c_272c45364a4a4f399b0c72ab197fb5cc.jpg" alt="Nancy S." class="testi-avatar" />
             <div>
               <div class="testi-name">Nancy S.</div>
               <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -969,10 +971,10 @@
       <!-- Brand -->
       <div>
         <div class="footer-logo">
-          <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness" />
+          <img src="images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness" />
         </div>
         <p class="footer-tagline">Tucson's only FDA-cleared Erchonia Laser Clinic. Non-invasive, drug-free pain relief backed by clinical science.</p>
-        <img src="../images/a84e9c_1f5160d078ba42a5bde9f95aed41ccad.png" alt="5-Star Rated" style="height:44px; width:auto; margin-top:8px;" />
+        <img src="images/a84e9c_1f5160d078ba42a5bde9f95aed41ccad.png" alt="5-Star Rated" style="height:44px; width:auto; margin-top:8px;" />
       </div>
 
       <!-- Services -->
