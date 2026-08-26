@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GVL Laser Therapy | Synergy Wellness | Tucson, AZ</title>
+  <meta name="description" content="The Erchonia GVL combines green (532nm) and violet (405nm) wavelengths for enhanced photobiomodulation therapy. FDA-cleared for conditions single-wavelength lasers cannot address as effectively." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:    #00505A;
+      --blue:    #0073CF;
+      --amber:   #F5A623;
+      --bg:      #F8F9FA;
+      --dark:    #1A1F2E;
+      --text:    #2C2C2C;
+      --white:   #ffffff;
+      --gray:    #6B7280;
+      --light:   #E8EFF0;
+      --green:   #2E7D32;
+      --violet:  #6A1B9A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      padding-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ===========================
+       HEADER / NAV
+    =========================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 72px;
+      gap: 20px;
+    }
+
+    .logo-wrap img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-main > li {
+      position: relative;
+    }
+
+    .nav-main > li > a,
+    .nav-main > li > span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 14px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .nav-main > li > a:hover,
+    .nav-main > li > span:hover,
+    .nav-main > li:hover > a,
+    .nav-main > li:hover > span {
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+    }
+
+    .nav-main > li > a.active {
+      background: rgba(245,166,35,0.18);
+      color: var(--amber);
+    }
+
+    .nav-main > li > span::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      margin-left: 2px;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      min-width: 220px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      padding: 8px 0;
+      list-style: none;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s;
+      z-index: 100;
+    }
+
+    .nav-main > li:hover .dropdown {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    .dropdown li a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .dropdown li a:hover,
+    .dropdown li a.active {
+      background: var(--light);
+      color: var(--teal);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .header-phone {
+      color: var(--amber);
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      background: #e8961a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(245,166,35,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-teal:hover {
+      background: #00404A;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,80,90,0.35);
+    }
+
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1.05rem;
+      border-radius: 10px;
+    }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===========================
+       HERO (static gradient for sub-pages)
+    =========================== */
+    .page-hero {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(
+        120deg,
+        #001f25 0%,
+        #00505A 50%,
+        #003A42 100%
+      );
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(0,115,207,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(106,27,154,0.12) 0%, transparent 60%);
+    }
+
+    /* Decorative wavelength circles */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-orb-green {
+      width: 480px;
+      height: 480px;
+      top: -100px;
+      right: 80px;
+      background: radial-gradient(circle, rgba(46,125,50,0.22) 0%, transparent 65%);
+    }
+
+    .hero-orb-violet {
+      width: 340px;
+      height: 340px;
+      bottom: -60px;
+      right: 240px;
+      background: radial-gradient(circle, rgba(106,27,154,0.18) 0%, transparent 65%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      padding: 80px 40px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(245,166,35,0.18);
+      border: 1px solid rgba(245,166,35,0.5);
+      border-radius: 40px;
+      padding: 8px 18px;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge img {
+      height: 28px;
+      width: auto;
+    }
+
+    .hero-badge span {
+      color: var(--amber);
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .page-hero h1 span {
+      color: var(--amber);
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .hero-desc {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* Wavelength pill badges in hero */
+    .wavelength-pills {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .wavelength-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-size: 0.83rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .pill-green {
+      background: rgba(46,125,50,0.25);
+      border: 1.5px solid rgba(76,175,80,0.5);
+      color: #81C784;
+    }
+
+    .pill-violet {
+      background: rgba(106,27,154,0.25);
+      border: 1.5px solid rgba(149,117,205,0.5);
+      color: #CE93D8;
+    }
+
+    .pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .pill-green .pill-dot { background: #4CAF50; }
+    .pill-violet .pill-dot { background: #9C27B0; }
+
+    /* ===========================
+       STATS BAR
+    =========================== */
+    .stats-bar {
+      background: var(--teal);
+      padding: 28px 40px;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+      color: var(--white);
+    }
+
+    .stat-num {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--amber);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      opacity: 0.88;
+      font-weight: 500;
+      max-width: 120px;
+      margin: 4px auto 0;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 50px;
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* ===========================
+       SECTION SHARED
+    =========================== */
+    .section {
+      padding: 90px 40px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--light);
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin-bottom: 16px;
+    }
+
+    .section-label-amber {
+      background: rgba(245,166,35,0.15);
+      color: #c47d0a;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 640px;
+    }
+
+    /* ===========================
+       WHAT IS GVL
+    =========================== */
+    .what-is-gvl {
+      background: var(--white);
+    }
+
+    .gvl-intro-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 52px;
+    }
+
+    .gvl-intro-text p {
+      color: var(--gray);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .gvl-intro-text p:last-child { margin-bottom: 0; }
+
+    .gvl-visual {
+      background: linear-gradient(135deg, #001f25, #003A42);
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gvl-visual::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,125,50,0.3) 0%, transparent 70%);
+    }
+
+    .gvl-visual::after {
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      right: -30px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(106,27,154,0.3) 0%, transparent 70%);
+    }
+
+    .gvl-visual-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .wavelength-display {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .wavelength-block {
+      flex: 1;
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .wavelength-block-green {
+      background: rgba(46,125,50,0.2);
+      border: 1.5px solid rgba(76,175,80,0.4);
+    }
+
+    .wavelength-block-violet {
+      background: rgba(106,27,154,0.2);
+      border: 1.5px solid rgba(149,117,205,0.4);
+    }
+
+    .wavelength-nm {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .wavelength-block-green .wavelength-nm { color: #81C784; }
+    .wavelength-block-violet .wavelength-nm { color: #CE93D8; }
+
+    .wavelength-color-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .wavelength-block-green .wavelength-color-name { color: rgba(129,199,132,0.75); }
+    .wavelength-block-violet .wavelength-color-name { color: rgba(206,147,216,0.75); }
+
+    .wavelength-benefit {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .synergy-label {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      background: rgba(245,166,35,0.15);
+      border: 1px solid rgba(245,166,35,0.4);
+      border-radius: 8px;
+      padding: 10px 20px;
+      color: var(--amber);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ===========================
+       TWO WAVELENGTHS SECTION
+    =========================== */
+    .wavelengths { background: var(--bg); }
+
+    .wavelengths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 52px;
+    }
+
+    .wavelength-card {
+      border-radius: 18px;
+      padding: 40px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .wavelength-card-green {
+      background: var(--white);
+      border: 2px solid rgba(76,175,80,0.35);
+    }
+
+    .wavelength-card-green::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #4CAF50, #81C784);
+      border-radius: 18px 18px 0 0;
+    }
+
+    .wavelength-card-violet {
+      background: var(--white);
+      border: 2px solid rgba(149,117,205,0.35);
+    }
+
+    .wavelength-card-violet::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #6A1B9A, #9C27B0);
+      border-radius: 18px 18px 0 0;
+    }
+
+    .wcard-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .wcard-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .wcard-icon-green { background: rgba(76,175,80,0.12); }
+    .wcard-icon-violet { background: rgba(106,27,154,0.1); }
+
+    .wcard-header-text {}
+
+    .wcard-nm {
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .wcard-nm-green { color: #2E7D32; }
+    .wcard-nm-violet { color: #6A1B9A; }
+
+    .wcard-title {
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .wcard-desc {
+      color: var(--text);
+      font-size: 0.97rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .wcard-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .wcard-benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wcard-check {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .wcard-check-green { background: #4CAF50; }
+    .wcard-check-violet { background: #9C27B0; }
+
+    /* ===========================
+       FDA CALLOUT
+    =========================== */
+    .fda-callout {
+      background: linear-gradient(135deg, var(--dark) 0%, #0a1628 100%);
+      color: var(--white);
+    }
+
+    .fda-box {
+      background: rgba(245,166,35,0.08);
+      border: 1.5px solid rgba(245,166,35,0.3);
+      border-radius: 20px;
+      padding: 56px 60px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .fda-box-text h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .fda-box-text p {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+
+    .fda-box-text p:last-child { margin-bottom: 0; }
+
+    .fda-stats-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 200px;
+    }
+
+    .fda-stat-block {
+      background: rgba(245,166,35,0.12);
+      border: 1px solid rgba(245,166,35,0.25);
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: center;
+    }
+
+    .fda-stat-num {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--amber);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .fda-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    /* ===========================
+       CONDITIONS GVL TREATS
+    =========================== */
+    .conditions-gvl { background: var(--white); }
+
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 52px;
+    }
+
+    .condition-card {
+      background: var(--bg);
+      border: 1.5px solid var(--light);
+      border-radius: 14px;
+      padding: 22px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .condition-card:hover {
+      border-color: var(--teal);
+      background: var(--light);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,80,90,0.1);
+    }
+
+    .condition-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--white);
+      border: 1px solid var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+
+    .condition-text {}
+
+    .condition-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 2px;
+      line-height: 1.3;
+    }
+
+    .condition-note {
+      font-size: 0.78rem;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+
+    /* ===========================
+       FINAL CTA
+    =========================== */
+    .final-cta {
+      background: linear-gradient(135deg, var(--teal) 0%, #003840 100%);
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+
+    .final-cta p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.1rem;
+      max-width: 620px;
+      margin: 0 auto 44px;
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-contact-strip {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .cta-location {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.88rem;
+    }
+
+    .cta-location-icon {
+      color: var(--amber);
+      font-size: 1rem;
+    }
+
+    .cta-location a {
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .cta-location a:hover { text-decoration: underline; }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    .site-footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.72);
+      padding: 64px 40px 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto 48px;
+    }
+
+    .footer-logo img {
+      height: 44px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .footer-col-title {
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.62);
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--amber); }
+
+    .footer-address {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .footer-address strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .footer-address a {
+      color: rgba(255,255,255,0.62);
+      transition: color 0.15s;
+    }
+
+    .footer-address a:hover { color: var(--amber); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.42);
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.42);
+    }
+
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ===========================
+       DEMO BANNER
+    =========================== */
+    .demo-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: linear-gradient(90deg, #0073CF, #00505A);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 -2px 16px rgba(0,0,0,0.3);
+    }
+
+    .demo-banner span {
+      color: var(--amber);
+    }
+
+    /* ===========================
+       MOBILE NAV
+    =========================== */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #141820;
+      padding: 0 24px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a,
+    .mobile-nav-section-title {
+      display: block;
+      padding: 12px 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .mobile-nav-section-title {
+      color: var(--amber);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding-top: 18px;
+      border-bottom: none;
+    }
+
+    .mobile-nav a:hover { color: var(--amber); }
+    .mobile-nav a.active { color: var(--amber); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 900px) {
+      .nav-main { display: none; }
+      .hamburger { display: flex; }
+
+      .header-top { padding: 0 20px; }
+      .hero-inner { padding: 60px 20px; }
+      .stats-bar { padding: 28px 20px; }
+      .stat-divider { display: none; }
+      .stats-grid { gap: 24px; }
+
+      .section { padding: 64px 20px; }
+      .gvl-intro-layout { grid-template-columns: 1fr; gap: 40px; }
+      .wavelengths-grid { grid-template-columns: 1fr; }
+      .fda-box { grid-template-columns: 1fr; padding: 40px 28px; }
+      .fda-stats-col { flex-direction: row; flex-wrap: wrap; }
+      .fda-stat-block { flex: 1; min-width: 140px; }
+      .conditions-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .final-cta { padding: 72px 20px; }
+      .site-footer { padding: 48px 20px 32px; }
+    }
+
+    @media (max-width: 600px) {
+      .header-phone { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .conditions-grid { grid-template-columns: 1fr 1fr; }
+      .fda-stats-col { flex-direction: column; }
+      .cta-contact-strip { flex-direction: column; gap: 16px; }
+      .wavelength-display { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo-wrap">
+        <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness - Tucson Laser Therapy" />
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-main">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <span tabindex="0">Services</span>
+            <ul class="dropdown">
+              <li><a href="erchonia-laser.html">FX Lasers</a></li>
+              <li><a href="gvl.html" class="active">GVL</a></li>
+              <li><a href="onlyclass2lasers.html">Class 2 Only</a></li>
+            </ul>
+          </li>
+
+          <li><a href="research.html">Research</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <span class="header-phone">(520) 818-8857</span>
+        <a href="contact-us.html" class="btn btn-primary">Book Consultation</a>
+        <button class="hamburger" aria-label="Toggle menu" onclick="this.closest('.site-header').querySelector('.mobile-nav').classList.toggle('open')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <span class="mobile-nav-section-title">Services</span>
+      <a href="erchonia-laser.html">FX Lasers</a>
+      <a href="gvl.html" class="active">GVL</a>
+      <a href="onlyclass2lasers.html">Class 2 Only</a>
+      <a href="research.html">Research</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="our-team.html">Our Team</a>
+      <a href="contact-us.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="page-hero" aria-label="GVL Laser Therapy Hero">
+    <div class="hero-orb hero-orb-green"></div>
+    <div class="hero-orb hero-orb-violet"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <img src="../images/a84e9c_61f97cbc92494e4da06a76e19fa450bf.png" alt="FDA Cleared" />
+        <span>FDA-Cleared Dual-Wavelength Technology</span>
+      </div>
+
+      <h1>GVL <span>Laser</span> Therapy</h1>
+      <p class="hero-sub">The Next Generation of Low-Level Laser Technology</p>
+      <p class="hero-desc">The Erchonia GVL (Green Violet Laser) represents a breakthrough in photobiomodulation therapy. Unlike traditional single-wavelength lasers, the GVL combines two distinct wavelengths simultaneously for an enhanced therapeutic effect that addresses multiple biological processes at once.</p>
+
+      <div class="wavelength-pills">
+        <span class="wavelength-pill pill-green"><span class="pill-dot"></span>Green 532nm</span>
+        <span class="wavelength-pill pill-violet"><span class="pill-dot"></span>Violet 405nm</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="contact-us.html" class="btn btn-primary btn-lg">Book a Consultation</a>
+        <a href="research.html" class="btn btn-outline btn-lg">View the Research</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STATS BAR ==================== -->
+  <div class="stats-bar" aria-label="GVL key facts">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">2</span>
+        <div class="stat-label">Wavelengths Working Together</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">21</span>
+        <div class="stat-label">FDA Clearances Held by Erchonia</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">Class 2</span>
+        <div class="stat-label">Cold Laser, Zero Side Effects</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">532nm</span>
+        <div class="stat-label">Green: Cellular Repair and Inflammation</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num">405nm</span>
+        <div class="stat-label">Violet: Anti-Microbial Surface Healing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== WHAT IS GVL ==================== -->
+  <section class="section what-is-gvl" id="what-is-gvl">
+    <div class="section-inner">
+      <span class="section-label">Photobiomodulation Technology</span>
+      <h2>What Is the Erchonia GVL?</h2>
+      <p class="section-desc">A revolutionary dual-wavelength laser that combines two proven therapeutic frequencies into a single, synchronized treatment.</p>
+
+      <div class="gvl-intro-layout">
+        <div class="gvl-intro-text">
+          <p>The Erchonia GVL (Green Violet Laser) is a Class 2 low-level laser that simultaneously emits two distinct wavelengths of light: green at 532 nanometers and violet at 405 nanometers. This dual-wavelength approach is what sets the GVL apart from every other low-level laser device on the market.</p>
+          <p>Traditional single-wavelength lasers target one biological pathway at a time. The GVL activates multiple pathways simultaneously, creating a synergistic effect that delivers faster, more comprehensive healing. The two frequencies complement each other in ways that cannot be replicated by applying them separately or sequentially.</p>
+          <p>Because the GVL addresses both deep-tissue repair and surface-level microbial defense at the same time, it is particularly effective for complex, chronic, or multi-layered conditions where a single treatment modality falls short.</p>
+        </div>
+
+        <div class="gvl-visual">
+          <div class="gvl-visual-title">Dual-Wavelength Output</div>
+          <div class="wavelength-display">
+            <div class="wavelength-block wavelength-block-green">
+              <div class="wavelength-nm">532nm</div>
+              <div class="wavelength-color-name">Green Light</div>
+              <div class="wavelength-benefit">Deep tissue penetration for cellular repair and inflammation reduction</div>
+            </div>
+            <div class="wavelength-block wavelength-block-violet">
+              <div class="wavelength-nm">405nm</div>
+              <div class="wavelength-color-name">Violet Light</div>
+              <div class="wavelength-benefit">Surface healing with powerful anti-microbial photonic properties</div>
+            </div>
+          </div>
+          <span class="synergy-label">&#10024; Synergistic Dual Action</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHY TWO WAVELENGTHS ==================== -->
+  <section class="section wavelengths" id="wavelengths">
+    <div class="section-inner">
+      <span class="section-label">Why Two Wavelengths?</span>
+      <h2>Two Frequencies. One Powerful Outcome.</h2>
+      <p class="section-desc">Green and violet light each activate distinct biological mechanisms. Together they address what neither wavelength can accomplish alone.</p>
+
+      <div class="wavelengths-grid">
+        <!-- Green Card -->
+        <div class="wavelength-card wavelength-card-green">
+          <div class="wcard-header">
+            <div class="wcard-icon wcard-icon-green">&#129001;</div>
+            <div class="wcard-header-text">
+              <div class="wcard-nm wcard-nm-green">532nm</div>
+              <div class="wcard-title">Green Light Wavelength</div>
+            </div>
+          </div>
+          <p class="wcard-desc">Green light at 532 nanometers penetrates into deeper tissue layers, reaching muscle, connective tissue, and bone. At this depth it interacts with cellular mitochondria to stimulate ATP production, reduce inflammation at the structural level, and accelerate the body's own repair cycle.</p>
+          <ul class="wcard-benefits">
+            <li>
+              <span class="wcard-check wcard-check-green">&#10003;</span>
+              Stimulates mitochondrial ATP production for accelerated cellular repair
+            </li>
+            <li>
+              <span class="wcard-check wcard-check-green">&#10003;</span>
+              Reduces structural inflammation in deep muscle and connective tissue
+            </li>
+            <li>
+              <span class="wcard-check wcard-check-green">&#10003;</span>
+              Promotes nerve regeneration and improved circulation
+            </li>
+            <li>
+              <span class="wcard-check wcard-check-green">&#10003;</span>
+              Activates cytokine pathways that regulate the inflammatory response
+            </li>
+            <li>
+              <span class="wcard-check wcard-check-green">&#10003;</span>
+              Supports post-surgical tissue remodeling and strength restoration
+            </li>
+          </ul>
+        </div>
+
+        <!-- Violet Card -->
+        <div class="wavelength-card wavelength-card-violet">
+          <div class="wcard-header">
+            <div class="wcard-icon wcard-icon-violet">&#128998;</div>
+            <div class="wcard-header-text">
+              <div class="wcard-nm wcard-nm-violet">405nm</div>
+              <div class="wcard-title">Violet Light Wavelength</div>
+            </div>
+          </div>
+          <p class="wcard-desc">Violet light at 405 nanometers operates at a shorter wavelength that interacts with surface and near-surface tissue. It has well-documented anti-microbial properties, disrupting the cellular membranes of harmful bacteria and pathogens without damaging healthy surrounding tissue.</p>
+          <ul class="wcard-benefits">
+            <li>
+              <span class="wcard-check wcard-check-violet">&#10003;</span>
+              Disrupts bacterial cell membranes to reduce microbial load
+            </li>
+            <li>
+              <span class="wcard-check wcard-check-violet">&#10003;</span>
+              Promotes surface-level wound healing and tissue regeneration
+            </li>
+            <li>
+              <span class="wcard-check wcard-check-violet">&#10003;</span>
+              Reduces biofilm formation associated with chronic infection
+            </li>
+            <li>
+              <span class="wcard-check wcard-check-violet">&#10003;</span>
+              Supports dermatological healing including skin conditions and burns
+            </li>
+            <li>
+              <span class="wcard-check wcard-check-violet">&#10003;</span>
+              Enhances immune-cell activity at the site of treatment
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FDA CLEARANCES ==================== -->
+  <section class="section fda-callout" id="fda-clearances">
+    <div class="section-inner">
+      <span class="section-label section-label-amber">FDA Clearances</span>
+      <h2 style="color:var(--white);">The Most Validated Laser on the Market</h2>
+
+      <div class="fda-box">
+        <div class="fda-box-text">
+          <h3>Erchonia Holds 21 of 24 FDA Clearances Ever Granted to Low-Level Lasers</h3>
+          <p>When the FDA grants clearance for a low-level laser device, it requires rigorous clinical evidence demonstrating both safety and effectiveness. Erchonia has earned 21 of the 24 total clearances ever issued to low-level laser devices, making them the most scientifically validated laser company in the world.</p>
+          <p>The GVL has received specific FDA clearances for conditions that single-wavelength lasers cannot address as effectively. These clearances were earned through double-blind, placebo-controlled clinical trials, the highest standard of evidence in medicine.</p>
+          <p>No other laser company comes close. When you receive GVL treatment at Synergy Wellness, you are receiving care backed by more FDA clinical evidence than any competing device on the market.</p>
+        </div>
+        <div class="fda-stats-col">
+          <div class="fda-stat-block">
+            <span class="fda-stat-num">21</span>
+            <div class="fda-stat-label">of 24 total FDA clearances belong to Erchonia</div>
+          </div>
+          <div class="fda-stat-block">
+            <span class="fda-stat-num">RCTs</span>
+            <div class="fda-stat-label">Backed by randomized controlled trials</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONDITIONS GVL TREATS ==================== -->
+  <section class="section conditions-gvl" id="conditions">
+    <div class="section-inner">
+      <span class="section-label">Who Is GVL For?</span>
+      <h2>Conditions the GVL Treats</h2>
+      <p class="section-desc">The GVL is especially suited for complex, chronic, or multi-layered conditions where standard single-wavelength laser therapy has not provided complete resolution.</p>
+
+      <div class="conditions-grid">
+        <div class="condition-card">
+          <div class="condition-icon">&#129504;</div>
+          <div class="condition-text">
+            <div class="condition-name">Complex and Chronic Conditions</div>
+            <div class="condition-note">Not fully resolved by standard laser therapy</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#128136;</div>
+          <div class="condition-text">
+            <div class="condition-name">Post-Surgical Healing</div>
+            <div class="condition-note">Tissue repair with anti-microbial support</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#127939;</div>
+          <div class="condition-text">
+            <div class="condition-name">Athletic Recovery</div>
+            <div class="condition-note">Accelerated return to peak performance</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#129504;</div>
+          <div class="condition-text">
+            <div class="condition-name">Neurological and Brain Health</div>
+            <div class="condition-note">Concussion, TBI, and nerve conditions</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#128293;</div>
+          <div class="condition-text">
+            <div class="condition-name">Wound and Dermatological Healing</div>
+            <div class="condition-note">Burns, skin conditions, and chronic wounds</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#128293;</div>
+          <div class="condition-text">
+            <div class="condition-name">Shingles and Herpes Zoster</div>
+            <div class="condition-note">Anti-microbial and nerve pain relief</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#9889;</div>
+          <div class="condition-text">
+            <div class="condition-name">Trigeminal Neuralgia</div>
+            <div class="condition-note">Nerve pain with surface-level relief</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#129488;</div>
+          <div class="condition-text">
+            <div class="condition-name">Atypical Facial Pain</div>
+            <div class="condition-note">Multi-pathway approach for complex pain</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#128170;</div>
+          <div class="condition-text">
+            <div class="condition-name">Joint and Soft Tissue Injuries</div>
+            <div class="condition-note">Shoulder, knee, hip, and connective tissue</div>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">&#10084;</div>
+          <div class="condition-text">
+            <div class="condition-name">Inflammatory Conditions</div>
+            <div class="condition-note">Deep and surface inflammation simultaneously</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section class="final-cta">
+    <div class="section-inner" style="max-width:1100px; margin:0 auto;">
+      <span class="section-label section-label-amber" style="margin-bottom:20px;">Ready to Find Out?</span>
+      <h2>Is GVL Right for Your Condition?</h2>
+      <p>Book a consultation with Dr. Harrigan to find out if GVL therapy can help. The consultation is completely free with no commitment required.</p>
+
+      <div class="cta-actions">
+        <a href="tel:5208188857" class="btn btn-primary btn-lg">&#128222; Call (520) 818-8857</a>
+        <a href="contact-us.html" class="btn btn-outline btn-lg">Book Online</a>
+      </div>
+
+      <div class="cta-contact-strip">
+        <div class="cta-location">
+          <span class="cta-location-icon">&#128205;</span>
+          <span>6015 E. Grant Road, Tucson, AZ 85712 &nbsp;|&nbsp; <a href="tel:5208188857">(520) 818-8857</a></span>
+        </div>
+        <div class="cta-location">
+          <span class="cta-location-icon">&#128205;</span>
+          <span>11115 N La Canada Dr #155, Tucson, AZ 85737 &nbsp;|&nbsp; <a href="tel:5205050550">(520) 505-0550</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer-logo">
+          <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness" />
+        </div>
+        <p class="footer-tagline">Tucson's only FDA-cleared Erchonia Laser Clinic. Non-invasive, drug-free pain relief backed by clinical science.</p>
+        <img src="../images/a84e9c_1f5160d078ba42a5bde9f95aed41ccad.png" alt="5-Star Rated" style="height:44px; width:auto; margin-top:8px;" />
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="erchonia-laser.html">FX Lasers</a></li>
+          <li><a href="gvl.html">GVL Laser Therapy</a></li>
+          <li><a href="onlyclass2lasers.html">Class 2 Lasers Only</a></li>
+          <li><a href="research.html">Research</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Locations -->
+      <div>
+        <div class="footer-col-title">Our Locations</div>
+        <div class="footer-address">
+          <strong>Grant Road</strong><br />
+          6015 E. Grant Road<br />
+          Tucson, AZ 85712<br />
+          <a href="tel:5208188857">(520) 818-8857</a>
+        </div>
+        <div class="footer-address">
+          <strong>La Canada</strong><br />
+          11115 N La Canada Dr #155<br />
+          Tucson, AZ 85737<br />
+          <a href="tel:5205050550">(520) 505-0550</a>
+        </div>
+        <div class="footer-address">
+          <strong>Hours:</strong><br />
+          By Appointment Only<br />
+          Monday through Friday
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">&copy; 2026 Synergy Wellness | Tucson Laser Therapy. All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="index.html">Terms of Service</a>
+        <a href="contact-us.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CLOSEBOT CHAT WIDGET ==================== -->
+  <div id="closebot-widget" style="position:fixed;bottom:52px;right:20px;z-index:998;">
+    <div id="chat-bubble" onclick="toggleChat()" style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0073CF,#00505A);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,115,207,0.5);font-size:1.5rem;color:white;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">&#128172;</div>
+    <div id="chat-window" style="display:none;position:absolute;bottom:70px;right:0;width:320px;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.2);overflow:hidden;font-family:'Inter',sans-serif;">
+      <div style="background:linear-gradient(135deg,#00505A,#0073CF);padding:1rem;color:white;">
+        <div style="font-weight:700;font-size:1rem;">Synergy Wellness AI Assistant</div>
+        <div style="font-size:0.75rem;opacity:0.85;">Powered by CloseBot &mdash; Available 24/7</div>
+      </div>
+      <div id="chat-messages" style="padding:1rem;height:200px;overflow-y:auto;background:#f8f9fa;">
+        <div style="background:white;border-radius:10px;padding:0.75rem;margin-bottom:0.5rem;font-size:0.85rem;box-shadow:0 1px 4px rgba(0,0,0,0.08);line-height:1.5;">Hi! I am the Synergy Wellness AI assistant. I can help you book a free consultation, answer questions about GVL laser therapy, or tell you about our locations. How can I help you today?</div>
+      </div>
+      <div style="padding:0.75rem;border-top:1px solid #e5e7eb;display:flex;gap:0.5rem;">
+        <input id="chat-input" type="text" placeholder="Type your question..." style="flex:1;border:1px solid #e5e7eb;border-radius:8px;padding:0.5rem 0.75rem;font-size:0.85rem;outline:none;font-family:inherit;">
+        <button onclick="sendMessage()" style="background:#0073CF;color:white;border:none;border-radius:8px;padding:0.5rem 0.75rem;cursor:pointer;font-weight:600;font-size:0.85rem;">Send</button>
+      </div>
+      <div style="padding:0.5rem;text-align:center;font-size:0.7rem;color:#9ca3af;border-top:1px solid #f3f4f6;">
+        Powered by <a href="https://closebot.ai?fpr=richard" target="_blank" rel="noopener noreferrer" style="color:#0073CF;font-weight:600;text-decoration:none;">CloseBot AI</a> &nbsp;|&nbsp; <a href="https://closebot.ai?fpr=richard" target="_blank" rel="noopener noreferrer" style="color:#0073CF;text-decoration:none;">Get it for your practice</a>
+      </div>
+    </div>
+  </div>
+  <script>
+  function toggleChat(){var w=document.getElementById('chat-window');w.style.display=w.style.display==='none'?'block':'none';if(w.style.display==='block')document.getElementById('chat-input').focus();}
+  var faqs={book:'Great! Book your FREE consultation by calling (520) 818-8857 or clicking the Book button at the top of this page. We are open Monday through Friday by appointment.',gvl:'The GVL is the Erchonia Green Violet Laser. It emits two wavelengths simultaneously: green at 532nm for deep tissue repair and violet at 405nm for anti-microbial surface healing. Together they create a synergistic effect for complex conditions.',consult:'Your first consultation is completely free with no commitment. Dr. Harrigan will review your health history and determine if GVL therapy is right for you.',cost:'We offer a free initial consultation at no charge. Treatment costs vary by individual needs. Call (520) 818-8857 for full pricing details.',location:'We have two Tucson locations: 6015 E. Grant Road, (520) 818-8857 and 11115 N La Canada Dr #155, (520) 505-0550. Both are open Monday through Friday by appointment.',wavelength:'The GVL uses two wavelengths. Green 532nm penetrates deep tissue to stimulate cellular repair and reduce inflammation. Violet 405nm has anti-microbial properties and promotes surface-level healing.',fda:'Erchonia holds 21 of the 24 FDA clearances ever granted to low-level lasers. The GVL has specific clearances for conditions single-wavelength lasers cannot address as effectively.',safe:'Erchonia GVL is a Class 2 cold laser with zero known side effects. Completely non-invasive and drug-free with 25 years of clinical history.',default:'Thanks for your question! For the most accurate answer please call (520) 818-8857 or use the Book button above to schedule your free consultation.'};
+  function sendMessage(){var input=document.getElementById('chat-input');var msgs=document.getElementById('chat-messages');var text=input.value.trim();if(!text)return;msgs.innerHTML+='<div style="text-align:right;margin-bottom:0.5rem;"><span style="background:#0073CF;color:white;border-radius:10px;padding:0.5rem 0.75rem;font-size:0.85rem;display:inline-block;">'+text+'</span></div>';var lower=text.toLowerCase();var reply=faqs.default;if(lower.includes('book')||lower.includes('appoint')||lower.includes('schedule'))reply=faqs.book;else if(lower.includes('gvl')||lower.includes('green violet'))reply=faqs.gvl;else if(lower.includes('consult')||lower.includes('free'))reply=faqs.consult;else if(lower.includes('cost')||lower.includes('price')||lower.includes('much'))reply=faqs.cost;else if(lower.includes('location')||lower.includes('address')||lower.includes('where'))reply=faqs.location;else if(lower.includes('wavelength')||lower.includes('532')||lower.includes('405')||lower.includes('green')||lower.includes('violet'))reply=faqs.wavelength;else if(lower.includes('fda')||lower.includes('clear')||lower.includes('approv'))reply=faqs.fda;else if(lower.includes('safe')||lower.includes('side'))reply=faqs.safe;setTimeout(function(){msgs.innerHTML+='<div style="background:white;border-radius:10px;padding:0.75rem;margin-bottom:0.5rem;font-size:0.85rem;box-shadow:0 1px 4px rgba(0,0,0,0.08);line-height:1.5;">'+reply+'</div>';msgs.scrollTop=msgs.scrollHeight;},600);input.value='';msgs.scrollTop=msgs.scrollHeight;}
+  document.getElementById('chat-input').addEventListener('keypress',function(e){if(e.key==='Enter')sendMessage();});
+  </script>
+
+  <!-- ==================== DEMO BANNER ==================== -->
+  <div class="demo-banner">
+    FREE DEMO REDESIGN by <span>Richard Lobres</span> &nbsp;|&nbsp; This is what your site could look like.
+  </div>
+
+</body>
+</html>

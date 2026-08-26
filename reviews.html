@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Reviews | Synergy Wellness | Tucson Laser Therapy</title>
+  <meta name="description" content="Read real patient success stories from Synergy Wellness in Tucson, AZ. Rated 4.9 stars on Google. See how FDA-cleared Erchonia laser therapy has helped people just like you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:    #00505A;
+      --blue:    #0073CF;
+      --amber:   #F5A623;
+      --bg:      #F8F9FA;
+      --dark:    #1A1F2E;
+      --text:    #2C2C2C;
+      --white:   #ffffff;
+      --gray:    #6B7280;
+      --light:   #E8EFF0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      padding-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    img { display: block; max-width: 100%; }
+
+    /* ===========================
+       HEADER / NAV
+    =========================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 72px;
+      gap: 20px;
+    }
+
+    .logo-wrap img {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-main > li {
+      position: relative;
+    }
+
+    .nav-main > li > a,
+    .nav-main > li > span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 14px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .nav-main > li > a:hover,
+    .nav-main > li > span:hover,
+    .nav-main > li:hover > a,
+    .nav-main > li:hover > span {
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+    }
+
+    .nav-main > li > a.active {
+      background: rgba(245,166,35,0.18);
+      color: var(--amber);
+    }
+
+    .nav-main > li > span::after {
+      content: '';
+      display: inline-block;
+      width: 0; height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid currentColor;
+      margin-left: 2px;
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      min-width: 220px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+      padding: 8px 0;
+      list-style: none;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.2s, transform 0.2s;
+      z-index: 100;
+    }
+
+    .nav-main > li:hover .dropdown {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    .dropdown li a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .dropdown li a:hover {
+      background: var(--light);
+      color: var(--teal);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .header-phone {
+      color: var(--amber);
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      background: #e8961a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(245,166,35,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-teal:hover {
+      background: #00404A;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,80,90,0.35);
+    }
+
+    .btn-blue {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-blue:hover {
+      background: #005fa8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,115,207,0.4);
+    }
+
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1.05rem;
+      border-radius: 10px;
+    }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ===========================
+       PAGE HERO
+    =========================== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--teal) 0%, #003840 60%, #001f26 100%);
+      padding: 100px 40px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(0,115,207,0.25) 0%, transparent 65%);
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .page-hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,166,35,0.18);
+      border: 1px solid rgba(245,166,35,0.45);
+      border-radius: 40px;
+      padding: 7px 18px;
+      margin-bottom: 28px;
+      color: var(--amber);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .page-hero-sub {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.82);
+      font-weight: 500;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ===========================
+       SECTION SHARED
+    =========================== */
+    .section {
+      padding: 90px 40px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--light);
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin-bottom: 16px;
+    }
+
+    .section-label-amber {
+      background: rgba(245,166,35,0.15);
+      color: var(--amber);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-desc {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 640px;
+    }
+
+    /* ===========================
+       GOOGLE REVIEWS AGGREGATE
+    =========================== */
+    .google-aggregate {
+      background: var(--white);
+    }
+
+    .aggregate-box {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 2px solid var(--light);
+      border-radius: 20px;
+      padding: 52px 48px;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,80,90,0.08);
+    }
+
+    .google-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .google-logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #4285F4;
+      letter-spacing: -0.02em;
+    }
+
+    .google-logo-text span:nth-child(1) { color: #4285F4; }
+    .google-logo-text span:nth-child(2) { color: #EA4335; }
+    .google-logo-text span:nth-child(3) { color: #FBBC05; }
+    .google-logo-text span:nth-child(4) { color: #4285F4; }
+    .google-logo-text span:nth-child(5) { color: #34A853; }
+    .google-logo-text span:nth-child(6) { color: #EA4335; }
+
+    .aggregate-rating {
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .aggregate-stars {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .aggregate-stars svg {
+      width: 36px;
+      height: 36px;
+    }
+
+    .aggregate-count {
+      font-size: 1.05rem;
+      color: var(--gray);
+      font-weight: 500;
+      margin-bottom: 32px;
+    }
+
+    /* ===========================
+       TESTIMONIALS
+    =========================== */
+    .testimonials {
+      background: #12161F;
+      color: var(--white);
+    }
+
+    .testimonials h2 { color: var(--white); }
+
+    .testimonials .section-desc {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .testi-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 36px 32px;
+      position: relative;
+      transition: background 0.25s;
+    }
+
+    .testi-card:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .testi-quote {
+      font-size: 3rem;
+      color: var(--amber);
+      line-height: 1;
+      margin-bottom: 16px;
+      font-family: Georgia, serif;
+    }
+
+    .testi-text {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.97rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testi-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--amber);
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.95rem;
+    }
+
+    .testi-stars {
+      color: var(--amber);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      margin-top: 2px;
+    }
+
+    .testi-initial {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--teal);
+      border: 2px solid var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .testi-source {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 4px;
+    }
+
+    /* ===========================
+       SHARE EXPERIENCE
+    =========================== */
+    .share-experience {
+      background: var(--bg);
+    }
+
+    .share-box {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 60px 56px;
+      text-align: center;
+      border: 1px solid var(--light);
+      box-shadow: 0 4px 24px rgba(0,80,90,0.07);
+    }
+
+    .share-icon {
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .share-box h2 {
+      margin-bottom: 16px;
+    }
+
+    .share-box p {
+      color: var(--gray);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 540px;
+      margin: 0 auto 36px;
+    }
+
+    /* ===========================
+       FINAL CTA
+    =========================== */
+    .final-cta {
+      background: linear-gradient(135deg, var(--teal) 0%, #003840 100%);
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 16px;
+    }
+
+    .final-cta p {
+      color: rgba(255,255,255,0.78);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 44px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    .site-footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.72);
+      padding: 64px 40px 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto 48px;
+    }
+
+    .footer-logo img {
+      height: 44px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .footer-col-title {
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.62);
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover {
+      color: var(--amber);
+    }
+
+    .footer-address {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .footer-address strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .footer-address a {
+      color: rgba(255,255,255,0.62);
+      transition: color 0.15s;
+    }
+
+    .footer-address a:hover { color: var(--amber); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-legal {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.42);
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.42);
+    }
+
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ===========================
+       DEMO BANNER
+    =========================== */
+    .demo-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: linear-gradient(90deg, #0073CF, #00505A);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 -2px 16px rgba(0,0,0,0.3);
+    }
+
+    .demo-banner span {
+      color: var(--amber);
+    }
+
+    /* ===========================
+       MOBILE NAV
+    =========================== */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #141820;
+      padding: 0 24px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a,
+    .mobile-nav-section-title {
+      display: block;
+      padding: 12px 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .mobile-nav-section-title {
+      color: var(--amber);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding-top: 18px;
+      border-bottom: none;
+    }
+
+    .mobile-nav a:hover { color: var(--amber); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 900px) {
+      .nav-main { display: none; }
+      .hamburger { display: flex; }
+
+      .header-top { padding: 0 20px; }
+      .page-hero { padding: 72px 20px 56px; }
+      .section { padding: 64px 20px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .final-cta { padding: 72px 20px; }
+      .site-footer { padding: 48px 20px 32px; }
+      .aggregate-box { padding: 40px 28px; }
+      .share-box { padding: 48px 28px; }
+    }
+
+    @media (max-width: 600px) {
+      .header-phone { display: none; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .aggregate-rating { font-size: 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo-wrap">
+        <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness - Tucson Laser Therapy" />
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-main">
+          <li><a href="index.html">Home</a></li>
+
+          <li>
+            <span tabindex="0">Services</span>
+            <ul class="dropdown">
+              <li><a href="erchonia-laser.html">FX Lasers</a></li>
+              <li><a href="gvl.html">GVL</a></li>
+              <li><a href="onlyclass2lasers.html">Class 2 Only</a></li>
+            </ul>
+          </li>
+
+          <li><a href="research.html">Research</a></li>
+          <li><a href="reviews.html" class="active">Reviews</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <span class="header-phone">(520) 818-8857</span>
+        <a href="contact-us.html" class="btn btn-primary">Book Consultation</a>
+        <button class="hamburger" aria-label="Toggle menu" onclick="this.closest('.site-header').querySelector('.mobile-nav').classList.toggle('open')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <span class="mobile-nav-section-title">Services</span>
+      <a href="erchonia-laser.html">FX Lasers</a>
+      <a href="gvl.html">GVL</a>
+      <a href="onlyclass2lasers.html">Class 2 Only</a>
+      <a href="research.html">Research</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="our-team.html">Our Team</a>
+      <a href="contact-us.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ==================== PAGE HERO ==================== -->
+  <section class="page-hero" aria-label="Page hero">
+    <div class="page-hero-inner">
+      <div class="page-hero-label">&#11088; Patient Success Stories</div>
+      <h1>Patient Success Stories</h1>
+      <p class="page-hero-sub">Real patients. Real results. See what Synergy Wellness has done for people just like you.</p>
+    </div>
+  </section>
+
+  <!-- ==================== GOOGLE REVIEWS AGGREGATE ==================== -->
+  <section class="section google-aggregate" id="google-reviews">
+    <div class="section-inner">
+      <div class="aggregate-box">
+        <div class="google-logo">
+          <span class="google-logo-text">
+            <span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span>
+          </span>
+          <span style="font-size:1rem;color:var(--gray);font-weight:600;">Reviews</span>
+        </div>
+
+        <div class="aggregate-rating">4.9</div>
+
+        <div class="aggregate-stars" aria-label="4.9 out of 5 stars">
+          <!-- 5 filled stars -->
+          <svg viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <svg viewBox="0 0 24 24" fill="#F5A623" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+
+        <p class="aggregate-count">87 Google Reviews</p>
+
+        <a href="https://www.google.com/maps/search/Synergy+Wellness+Tucson+AZ" target="_blank" rel="noopener" class="btn btn-blue btn-lg">
+          &#11088; Read All Reviews on Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="section testimonials" id="testimonials">
+    <div class="section-inner">
+      <span class="section-label section-label-amber">What Patients Are Saying</span>
+      <h2>Real People. Real Relief.</h2>
+      <p class="section-desc">These are real words from real patients who found lasting results at Synergy Wellness.</p>
+
+      <div class="testimonials-grid">
+
+        <!-- Denise M. -->
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I feel fortunate to have connected with Synergy Wellness. I love the philosophy of treat the whole person NOT the symptoms. I feel like I have a solid partner working with me to achieve my optimum health.</p>
+          <div class="testi-author">
+            <img src="../images/a84e9c_b4f237471b574a5e9fa2e49c62cb5880.jpg" alt="Denise M." class="testi-avatar" />
+            <div>
+              <div class="testi-name">Denise M.</div>
+              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="testi-source">Google Review</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sarah M. -->
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">One of the things I miss the most about our care in Tucson! LOVE Synergy Wellness and Dr. Tim Harrigan, what a difference he has made in Mason's health and wellness.. and continues to do so as he is still sending us supplements and ready to answer any questions I have... even across the country.</p>
+          <div class="testi-author">
+            <div class="testi-initial">S</div>
+            <div>
+              <div class="testi-name">Sarah M.</div>
+              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="testi-source">Google Review</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nancy S. -->
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">Thank you for all you do for so many! So glad to have finally found someone that makes so much overall sense with regards to a healthy way to approach good health!</p>
+          <div class="testi-author">
+            <img src="../images/a84e9c_272c45364a4a4f399b0c72ab197fb5cc.jpg" alt="Nancy S." class="testi-avatar" />
+            <div>
+              <div class="testi-name">Nancy S.</div>
+              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="testi-source">Google Review</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Megg G. -->
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <p class="testi-text">I am thrilled to report that after yesterday's adjustments on my right shoulder, unplugging my ears, traction, etc... this is the first day without an excruciating headache in well over a month!!!! A month of pure HELL! Thank you so much for getting to the root of the issue and providing me relief and hope again.</p>
+          <div class="testi-author">
+            <div class="testi-initial">M</div>
+            <div>
+              <div class="testi-name">Megg G.</div>
+              <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="testi-source">Google Review</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SHARE YOUR EXPERIENCE ==================== -->
+  <section class="section share-experience" id="share">
+    <div class="section-inner">
+      <div class="share-box">
+        <div class="share-icon">&#128172;</div>
+        <span class="section-label">Your Story Matters</span>
+        <h2>Share Your Experience</h2>
+        <p>If you have been a patient at Synergy Wellness and laser therapy has helped you, we would love to hear your story. Your review helps other people in pain find us.</p>
+        <a href="https://www.google.com/maps/search/Synergy+Wellness+Tucson+AZ" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          &#11088; Leave a Google Review
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section class="final-cta">
+    <div class="section-inner" style="text-align:center; max-width:1100px; margin:0 auto;">
+      <span class="section-label section-label-amber" style="margin-bottom:20px;">Ready to Start?</span>
+      <h2>Book Your Free Consultation</h2>
+      <p>Join hundreds of patients who found lasting relief at Synergy Wellness. Schedule your NO COST, ZERO RISK consultation today and discover what FDA-cleared laser therapy can do for you.</p>
+
+      <div class="cta-actions">
+        <a href="tel:5208188857" class="btn btn-primary btn-lg">&#128222; Call (520) 818-8857</a>
+        <a href="contact-us.html" class="btn btn-outline btn-lg">Book Online</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer-logo">
+          <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness" />
+        </div>
+        <p class="footer-tagline">Tucson's only FDA-cleared Erchonia Laser Clinic. Non-invasive, drug-free pain relief backed by clinical science.</p>
+        <img src="../images/a84e9c_1f5160d078ba42a5bde9f95aed41ccad.png" alt="5-Star Rated" style="height:44px; width:auto; margin-top:8px;" />
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="erchonia-laser.html">FX Lasers</a></li>
+          <li><a href="gvl.html">GVL</a></li>
+          <li><a href="onlyclass2lasers.html">Class 2 Only</a></li>
+          <li><a href="research.html">Research</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Locations -->
+      <div>
+        <div class="footer-col-title">Our Locations</div>
+        <div class="footer-address">
+          <strong>Grant Road</strong><br />
+          6015 E. Grant Road<br />
+          Tucson, AZ 85712<br />
+          <a href="tel:5208188857">(520) 818-8857</a>
+        </div>
+        <div class="footer-address">
+          <strong>La Canada</strong><br />
+          11115 N La Canada Dr #155<br />
+          Tucson, AZ 85737<br />
+          <a href="tel:5205050550">(520) 505-0550</a>
+        </div>
+        <div class="footer-address">
+          <strong>Hours:</strong><br />
+          By Appointment Only<br />
+          Monday through Friday
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">&copy; 2026 Synergy Wellness | Tucson Laser Therapy. All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="index.html">Terms of Service</a>
+        <a href="contact-us.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CLOSEBOT CHAT WIDGET ==================== -->
+  <div id="closebot-widget" style="position:fixed;bottom:52px;right:20px;z-index:998;">
+    <div id="chat-bubble" onclick="toggleChat()" style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0073CF,#00505A);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,115,207,0.5);font-size:1.5rem;color:white;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">&#128172;</div>
+    <div id="chat-window" style="display:none;position:absolute;bottom:70px;right:0;width:320px;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.2);overflow:hidden;font-family:'Inter',sans-serif;">
+      <div style="background:linear-gradient(135deg,#00505A,#0073CF);padding:1rem;color:white;">
+        <div style="font-weight:700;font-size:1rem;">Synergy Wellness AI Assistant</div>
+        <div style="font-size:0.75rem;opacity:0.85;">Powered by CloseBot | Available 24/7</div>
+      </div>
+      <div id="chat-messages" style="padding:1rem;height:200px;overflow-y:auto;background:#f8f9fa;">
+        <div style="background:white;border-radius:10px;padding:0.75rem;margin-bottom:0.5rem;font-size:0.85rem;box-shadow:0 1px 4px rgba(0,0,0,0.08);line-height:1.5;">Hi! I am the Synergy Wellness AI assistant. I can help you book a free consultation, answer questions about laser therapy, or tell you about our locations. How can I help you today?</div>
+      </div>
+      <div style="padding:0.75rem;border-top:1px solid #e5e7eb;display:flex;gap:0.5rem;">
+        <input id="chat-input" type="text" placeholder="Type your question..." style="flex:1;border:1px solid #e5e7eb;border-radius:8px;padding:0.5rem 0.75rem;font-size:0.85rem;outline:none;font-family:inherit;">
+        <button onclick="sendMessage()" style="background:#0073CF;color:white;border:none;border-radius:8px;padding:0.5rem 0.75rem;cursor:pointer;font-weight:600;font-size:0.85rem;">Send</button>
+      </div>
+      <div style="padding:0.5rem;text-align:center;font-size:0.7rem;color:#9ca3af;border-top:1px solid #f3f4f6;">
+        Powered by <a href="https://closebot.ai?fpr=richard" target="_blank" rel="noopener noreferrer" style="color:#0073CF;font-weight:600;text-decoration:none;">CloseBot AI</a> &nbsp;|&nbsp; <a href="https://closebot.ai?fpr=richard" target="_blank" rel="noopener noreferrer" style="color:#0073CF;text-decoration:none;">Get it for your practice</a>
+      </div>
+    </div>
+  </div>
+  <script>
+  function toggleChat(){var w=document.getElementById('chat-window');w.style.display=w.style.display==='none'?'block':'none';if(w.style.display==='block')document.getElementById('chat-input').focus();}
+  var faqs={book:'Great! Book your FREE consultation by calling (520) 818-8857 or clicking the Book button at the top of this page. We are open Monday through Friday by appointment.',consultation:'Your first consultation is completely free with no commitment. Dr. Harrigan will review your health history and determine if laser therapy is right for you.',cost:'We offer a free initial consultation at no charge. Treatment costs vary by individual needs. Call (520) 818-8857 for full pricing details.',location:'We have two Tucson locations: 6015 E. Grant Road, (520) 818-8857 and 11115 N La Canada Dr #155, (520) 505-0550. Both are open Monday through Friday by appointment.',pain:'Erchonia laser therapy effectively treats chronic pain, back pain, plantar fasciitis, sports injuries, post-surgery recovery and many more conditions, with zero side effects.',safe:'Erchonia lasers have been used for over 25 years with 9,500+ published studies and zero recorded side effects. Completely non-invasive and drug-free.',fda:'Erchonia holds 21 of the 24 FDA clearances given to low-level lasers, more than any other brand. Dr. Harrigan uses only Erchonia Class 2 lasers.',default:'Thanks for your question! For the most accurate answer please call (520) 818-8857 or use the Book button above to schedule your free consultation.'};
+  function sendMessage(){var input=document.getElementById('chat-input');var msgs=document.getElementById('chat-messages');var text=input.value.trim();if(!text)return;msgs.innerHTML+='<div style="text-align:right;margin-bottom:0.5rem;"><span style="background:#0073CF;color:white;border-radius:10px;padding:0.5rem 0.75rem;font-size:0.85rem;display:inline-block;">'+text+'</span></div>';var lower=text.toLowerCase();var reply=faqs.default;if(lower.includes('book')||lower.includes('appoint')||lower.includes('schedule'))reply=faqs.book;else if(lower.includes('consult')||lower.includes('free'))reply=faqs.consultation;else if(lower.includes('cost')||lower.includes('price')||lower.includes('much'))reply=faqs.cost;else if(lower.includes('location')||lower.includes('address')||lower.includes('where'))reply=faqs.location;else if(lower.includes('pain')||lower.includes('condition')||lower.includes('treat'))reply=faqs.pain;else if(lower.includes('safe')||lower.includes('side'))reply=faqs.safe;else if(lower.includes('fda')||lower.includes('clear')||lower.includes('approv'))reply=faqs.fda;setTimeout(function(){msgs.innerHTML+='<div style="background:white;border-radius:10px;padding:0.75rem;margin-bottom:0.5rem;font-size:0.85rem;box-shadow:0 1px 4px rgba(0,0,0,0.08);line-height:1.5;">'+reply+'</div>';msgs.scrollTop=msgs.scrollHeight;},600);input.value='';msgs.scrollTop=msgs.scrollHeight;}
+  document.getElementById('chat-input').addEventListener('keypress',function(e){if(e.key==='Enter')sendMessage();});
+  </script>
+
+  <!-- ==================== DEMO BANNER ==================== -->
+  <div class="demo-banner">
+    FREE DEMO REDESIGN by <span>Richard Lobres</span> &nbsp;|&nbsp; This is what your site could look like.
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synergy Wellness Demo - Multi-Device Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; font-family: 'Inter', sans-serif; color: white; min-height: 100vh; }
+
+  .preview-header {
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .preview-title { font-size: 1rem; font-weight: 700; color: #e6edf3; }
+  .preview-subtitle { font-size: 0.75rem; color: #8b949e; margin-top: 2px; }
+
+  .badge {
+    background: #238636;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #21262d;
+    background: #0d1117;
+    overflow-x: auto;
+  }
+
+  .tab {
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: 500;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .tab:hover { background: #30363d; color: #e6edf3; }
+  .tab.active { background: #1f6feb; border-color: #1f6feb; color: white; }
+
+  .device-label {
+    padding: 1.5rem 2rem 0.5rem;
+    font-size: 0.75rem;
+    color: #8b949e;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .device-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #21262d;
+  }
+
+  /* ALL DEVICES GRID */
+  .all-devices {
+    display: none;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .all-devices.active { display: flex; flex-direction: column; }
+
+  .device-row {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  /* DEVICE FRAMES */
+  .device-frame {
+    flex-shrink: 0;
+  }
+
+  .device-frame.desktop { width: 100%; max-width: 1440px; }
+  .device-frame.laptop  { width: 900px; }
+  .device-frame.tablet  { width: 768px; }
+  .device-frame.mobile  { width: 390px; }
+
+  .device-chrome {
+    background: #1c2128;
+    border-radius: 12px 12px 0 0;
+    border: 1px solid #30363d;
+    padding: 10px 12px 0;
+  }
+
+  .chrome-dots {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .dot-red { background: #ff5f57; }
+  .dot-yellow { background: #ffbd2e; }
+  .dot-green { background: #28c840; }
+
+  .chrome-bar {
+    background: #0d1117;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    color: #8b949e;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .device-screen {
+    border: 1px solid #30363d;
+    border-top: none;
+    overflow: hidden;
+    border-radius: 0 0 4px 4px;
+    background: #f8f9fa;
+  }
+
+  .device-screen iframe {
+    display: block;
+    border: none;
+    width: 100%;
+    background: white;
+  }
+
+  .device-frame.desktop .device-screen iframe { height: 700px; }
+  .device-frame.laptop  .device-screen iframe { height: 600px; }
+  .device-frame.tablet  .device-screen iframe { height: 800px; }
+  .device-frame.mobile  .device-screen iframe { height: 750px; }
+
+  .device-footer {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.72rem;
+    color: #8b949e;
+    font-weight: 500;
+  }
+
+  /* MOBILE STAND */
+  .device-frame.mobile .device-chrome {
+    border-radius: 20px 20px 0 0;
+    padding: 14px 12px 0;
+  }
+
+  .device-frame.mobile .device-screen {
+    border-radius: 0 0 20px 20px;
+  }
+
+  /* SINGLE VIEW */
+  .single-view {
+    display: none;
+    padding: 2rem;
+    justify-content: center;
+  }
+
+  .single-view.active { display: flex; }
+
+  /* Scale for full overview */
+  .overview-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 2rem;
+    overflow-x: auto;
+  }
+
+  .scale-wrap {
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .scale-inner {
+    transform-origin: top left;
+    display: inline-block;
+  }
+
+  .scale-desktop { transform: scale(0.38); width: calc(1440px * 0.38); height: calc(700px * 0.38); overflow: hidden; }
+  .scale-laptop  { transform: scale(0.45); width: calc(900px  * 0.45); height: calc(600px * 0.45); overflow: hidden; }
+  .scale-tablet  { transform: scale(0.52); width: calc(768px  * 0.52); height: calc(800px * 0.52); overflow: hidden; }
+  .scale-mobile  { transform: scale(0.65); width: calc(390px  * 0.65); height: calc(750px * 0.65); overflow: hidden; }
+
+  .overview-label {
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #8b949e;
+    font-weight: 600;
+  }
+
+  /* Scrollable iframe wrappers */
+  .scroll-frame {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+  .responsive-note {
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin: 0 2rem 1rem;
+    font-size: 0.82rem;
+    color: #8b949e;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .responsive-note strong { color: #e6edf3; }
+</style>
+</head>
+<body>
+
+<div class="preview-header">
+  <div>
+    <div class="preview-title">Synergy Wellness - Redesign Demo</div>
+    <div class="preview-subtitle">tucsonlasertherapy.com | Prepared by Richard Lobres</div>
+  </div>
+  <span class="badge">FREE DEMO</span>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showView('overview')">🖥️ All Devices</button>
+  <button class="tab" onclick="showView('desktop')">🖥️ Desktop (1440px)</button>
+  <button class="tab" onclick="showView('laptop')">💻 Laptop (900px)</button>
+  <button class="tab" onclick="showView('tablet')">📱 Tablet (768px)</button>
+  <button class="tab" onclick="showView('mobile')">📱 Mobile (390px)</button>
+</div>
+
+<div class="responsive-note">
+  <span>ℹ️</span>
+  <span><strong>How to use:</strong> Click any tab to preview the redesigned site at that screen size. All views show the exact same site — fully responsive with no horizontal scrolling.</span>
+</div>
+
+<!-- ALL DEVICES OVERVIEW -->
+<div id="view-overview" class="overview-row">
+
+  <div class="scale-wrap">
+    <div style="position:relative;">
+      <div class="device-chrome" style="width:1440px; transform-origin:top left; transform:scale(0.32); display:inline-block;">
+        <div class="chrome-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+        <div class="chrome-bar">🔒 tucsonlasertherapy.com — Redesigned by Richard Lobres</div>
+      </div>
+      <div style="width:calc(1440px * 0.32); height:calc(760px * 0.32); overflow:hidden; border:1px solid #30363d; border-top:none;">
+        <iframe src="index.html" style="width:1440px; height:760px; border:none; transform-origin:top left; transform:scale(0.32);" scrolling="no"></iframe>
+      </div>
+    </div>
+    <div class="overview-label">🖥️ Desktop</div>
+  </div>
+
+  <div class="scale-wrap">
+    <div style="position:relative;">
+      <div class="device-chrome" style="width:900px; transform-origin:top left; transform:scale(0.44); display:inline-block;">
+        <div class="chrome-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+        <div class="chrome-bar">🔒 tucsonlasertherapy.com</div>
+      </div>
+      <div style="width:calc(900px * 0.44); height:calc(650px * 0.44); overflow:hidden; border:1px solid #30363d; border-top:none;">
+        <iframe src="index.html" style="width:900px; height:650px; border:none; transform-origin:top left; transform:scale(0.44);" scrolling="no"></iframe>
+      </div>
+    </div>
+    <div class="overview-label">💻 Laptop</div>
+  </div>
+
+  <div class="scale-wrap">
+    <div style="position:relative;">
+      <div class="device-chrome" style="width:768px; border-radius:16px 16px 0 0; transform-origin:top left; transform:scale(0.52); display:inline-block;">
+        <div class="chrome-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+        <div class="chrome-bar">🔒 tucsonlasertherapy.com</div>
+      </div>
+      <div style="width:calc(768px * 0.52); height:calc(800px * 0.52); overflow:hidden; border:1px solid #30363d; border-top:none; border-radius:0 0 8px 8px;">
+        <iframe src="index.html" style="width:768px; height:800px; border:none; transform-origin:top left; transform:scale(0.52);" scrolling="no"></iframe>
+      </div>
+    </div>
+    <div class="overview-label">📱 Tablet</div>
+  </div>
+
+  <div class="scale-wrap">
+    <div style="position:relative;">
+      <div class="device-chrome" style="width:390px; border-radius:24px 24px 0 0; transform-origin:top left; transform:scale(0.75); display:inline-block;">
+        <div class="chrome-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+        <div class="chrome-bar">🔒 tucsonlasertherapy.com</div>
+      </div>
+      <div style="width:calc(390px * 0.75); height:calc(750px * 0.75); overflow:hidden; border:1px solid #30363d; border-top:none; border-radius:0 0 18px 18px;">
+        <iframe src="index.html" style="width:390px; height:750px; border:none; transform-origin:top left; transform:scale(0.75);" scrolling="no"></iframe>
+      </div>
+    </div>
+    <div class="overview-label">📱 Mobile</div>
+  </div>
+
+</div>
+
+<!-- DESKTOP FULL -->
+<div id="view-desktop" class="single-view">
+  <div class="device-frame desktop">
+    <div class="device-chrome">
+      <div class="chrome-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+      <div class="chrome-bar">🔒 &nbsp; tucsonlasertherapy.com — Redesigned Demo by Richard Lobres &nbsp; | &nbsp; 1440px viewport</div>
+    </div>
+    <div class="device-screen">
+      <iframe src="index.html" style="width:1440px; height:700px; transform-origin:top left;" id="desktop-frame"></iframe>
+    </div>
+    <div class="device-footer">Desktop — 1440 × 700 • Click to scroll inside frame</div>
+  </div>
+</div>
+
+<!-- LAPTOP FULL -->
+<div id="view-laptop" class="single-view">
+  <div class="device-frame laptop">
+    <div class="device-chrome">
+      <div class="chrome-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+      <div class="chrome-bar">🔒 tucsonlasertherapy.com | 900px viewport</div>
+    </div>
+    <div class="device-screen">
+      <iframe src="index.html" style="width:900px; height:600px;"></iframe>
+    </div>
+    <div class="device-footer">Laptop — 900 × 600</div>
+  </div>
+</div>
+
+<!-- TABLET FULL -->
+<div id="view-tablet" class="single-view">
+  <div class="device-frame tablet">
+    <div class="device-chrome">
+      <div class="chrome-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+      <div class="chrome-bar">🔒 tucsonlasertherapy.com | 768px</div>
+    </div>
+    <div class="device-screen">
+      <iframe src="index.html" style="width:768px; height:800px;"></iframe>
+    </div>
+    <div class="device-footer">Tablet — 768 × 800</div>
+  </div>
+</div>
+
+<!-- MOBILE FULL -->
+<div id="view-mobile" class="single-view">
+  <div class="device-frame mobile">
+    <div class="device-chrome">
+      <div class="chrome-dots"><div class="dot dot-red"></div><div class="dot dot-yellow"></div><div class="dot dot-green"></div></div>
+      <div class="chrome-bar">🔒 tucsonlasertherapy.com</div>
+    </div>
+    <div class="device-screen">
+      <iframe src="index.html" style="width:390px; height:750px;"></iframe>
+    </div>
+    <div class="device-footer">Mobile — 390 × 750</div>
+  </div>
+</div>
+
+<script>
+function showView(view) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+
+  document.getElementById('view-overview').style.display = 'none';
+  document.getElementById('view-desktop').classList.remove('active');
+  document.getElementById('view-laptop').classList.remove('active');
+  document.getElementById('view-tablet').classList.remove('active');
+  document.getElementById('view-mobile').classList.remove('active');
+
+  if (view === 'overview') {
+    document.getElementById('view-overview').style.display = 'flex';
+  } else {
+    document.getElementById('view-' + view).classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>

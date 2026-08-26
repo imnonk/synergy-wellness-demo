@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team | Synergy Wellness | Tucson Laser Therapy</title>
+  <meta name="description" content="Meet the dedicated team at Synergy Wellness in Tucson, AZ. Dr. Tim Harrigan, D.C., B.Sc. and staff are passionate about your health and recovery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:    #00505A;
+      --blue:    #0073CF;
+      --amber:   #F5A623;
+      --bg:      #F8F9FA;
+      --dark:    #1A1F2E;
+      --text:    #2C2C2C;
+      --white:   #ffffff;
+      --gray:    #6B7280;
+      --light:   #E8EFF0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      padding-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ===========================
+       HEADER / NAV
+    =========================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--dark);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 72px;
+      gap: 20px;
+    }
+
+    .logo-wrap img { height: 48px; width: auto; }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-main > li > a {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 14px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-main > li > a:hover {
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+    }
+
+    .nav-main > li > a.active {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .header-phone {
+      color: var(--amber);
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      background: #e8961a;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(245,166,35,0.4);
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-teal:hover {
+      background: #00404A;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0,80,90,0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-lg {
+      padding: 16px 36px;
+      font-size: 1.05rem;
+      border-radius: 10px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #141820;
+      padding: 0 24px 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      display: block;
+      padding: 12px 0;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .mobile-nav a.active { color: var(--amber); }
+    .mobile-nav a:hover { color: var(--amber); }
+
+    /* ===========================
+       PAGE HERO
+    =========================== */
+    .page-hero {
+      background: linear-gradient(135deg, var(--teal) 0%, #003840 100%);
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .page-hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.88);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    /* ===========================
+       SECTION SHARED
+    =========================== */
+    .section {
+      padding: 90px 40px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-block;
+      background: var(--light);
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin-bottom: 16px;
+    }
+
+    .section-label-amber {
+      background: rgba(245,166,35,0.12);
+      color: var(--amber);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      color: var(--dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    /* ===========================
+       DR. TIM BIO
+    =========================== */
+    .dr-bio-section {
+      background: var(--white);
+    }
+
+    .dr-bio-layout {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .dr-photo-placeholder {
+      background: linear-gradient(135deg, #00505A, #1A1F2E);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem;
+      min-height: 380px;
+      text-align: center;
+      box-shadow: 0 12px 40px rgba(0,80,90,0.25);
+    }
+
+    .dr-photo-placeholder .doctor-emoji {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1;
+    }
+
+    .dr-photo-placeholder .placeholder-name {
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .dr-photo-placeholder .placeholder-note {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .dr-bio-content h2 {
+      margin-bottom: 8px;
+    }
+
+    .dr-bio-content .dr-credentials {
+      color: var(--teal);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .dr-bio-content p {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .dr-bio-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--light);
+      border-left: 4px solid var(--teal);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 24px;
+    }
+
+    .dr-bio-badge span {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--teal);
+    }
+
+    /* ===========================
+       PHILOSOPHY QUOTE
+    =========================== */
+    .philosophy-section {
+      background: var(--bg);
+    }
+
+    .quote-box {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 20px;
+      padding: 60px 64px;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+      position: relative;
+      border-top: 6px solid var(--amber);
+    }
+
+    .quote-mark {
+      font-size: 6rem;
+      color: var(--amber);
+      line-height: 0.5;
+      font-family: Georgia, serif;
+      display: block;
+      margin-bottom: 32px;
+      opacity: 0.7;
+    }
+
+    .quote-text {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.75;
+      font-weight: 500;
+    }
+
+    .quote-attribution {
+      margin-top: 28px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+
+    /* ===========================
+       STAFF GRID
+    =========================== */
+    .staff-section {
+      background: var(--white);
+    }
+
+    .staff-section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .staff-card {
+      background: var(--bg);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .staff-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+
+    .staff-photo-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .staff-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s;
+    }
+
+    .staff-card:hover .staff-photo-wrap img {
+      transform: scale(1.04);
+    }
+
+    .staff-info {
+      padding: 24px 24px 28px;
+    }
+
+    .staff-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .staff-role {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--teal);
+    }
+
+    /* ===========================
+       TEAM CTA
+    =========================== */
+    .team-cta {
+      background: linear-gradient(135deg, var(--teal) 0%, var(--dark) 100%);
+      padding: 90px 40px;
+      text-align: center;
+    }
+
+    .team-cta h2 {
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .team-cta p {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    .site-footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.75);
+      padding: 64px 40px 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1.5fr 1fr 1.5fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto 48px;
+    }
+
+    .footer-logo img { height: 44px; width: auto; margin-bottom: 16px; }
+
+    .footer-tagline {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.65;
+    }
+
+    .footer-col-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li { margin-bottom: 10px; }
+
+    .footer-links a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.62);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--amber); }
+
+    .footer-address {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .footer-address a {
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-legal {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.38);
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-legal-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.42);
+    }
+
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ===========================
+       DEMO BANNER
+    =========================== */
+    .demo-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: linear-gradient(90deg, #0073CF, #00505A);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 -2px 16px rgba(0,0,0,0.3);
+    }
+
+    .demo-banner span { color: var(--amber); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 1000px) {
+      .dr-bio-layout { grid-template-columns: 1fr; gap: 40px; }
+      .dr-photo-placeholder { min-height: 280px; }
+    }
+
+    @media (max-width: 900px) {
+      .nav-main { display: none; }
+      .hamburger { display: flex; }
+      .header-top { padding: 0 20px; }
+      .section { padding: 64px 20px; }
+      .page-hero { padding: 64px 20px; }
+      .staff-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .team-cta { padding: 72px 20px; }
+      .site-footer { padding: 48px 20px 32px; }
+      .quote-box { padding: 40px 32px; }
+    }
+
+    @media (max-width: 600px) {
+      .header-phone { display: none; }
+      .staff-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .quote-box { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header">
+    <div class="header-top">
+      <a href="index.html" class="logo-wrap">
+        <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness - Tucson Laser Therapy" />
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-main">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="erchonia-laser.html">FX Lasers</a></li>
+          <li><a href="gvl.html">GVL</a></li>
+          <li><a href="onlyclass2lasers.html">Class 2 Only</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="our-team.html" class="active">Our Team</a></li>
+          <li><a href="contact-us.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <span class="header-phone">(520) 818-8857</span>
+        <a href="contact-us.html" class="btn btn-primary">Book Consultation</a>
+        <button class="hamburger" aria-label="Toggle menu" onclick="this.closest('.site-header').querySelector('.mobile-nav').classList.toggle('open')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="erchonia-laser.html">FX Lasers</a>
+      <a href="gvl.html">GVL</a>
+      <a href="onlyclass2lasers.html">Class 2 Only</a>
+      <a href="research.html">Research</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="our-team.html" class="active">Our Team</a>
+      <a href="contact-us.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ==================== PAGE HERO ==================== -->
+  <section class="page-hero" aria-label="Our Team Hero">
+    <h1>Meet Our Team</h1>
+    <p>Passionate, dedicated, and genuinely invested in your health and wellbeing.</p>
+  </section>
+
+  <!-- ==================== DR. TIM BIO ==================== -->
+  <section class="section dr-bio-section" id="dr-tim">
+    <div class="section-inner">
+      <div class="dr-bio-layout">
+
+        <!-- Placeholder Photo -->
+        <div class="dr-photo-placeholder">
+          <div class="doctor-emoji">&#128104;&#8205;&#9877;&#65039;</div>
+          <div class="placeholder-name">Dr. Tim Harrigan</div>
+          <div class="placeholder-note">Professional photo coming soon</div>
+        </div>
+
+        <!-- Bio Content -->
+        <div class="dr-bio-content">
+          <span class="section-label">Meet the Doctor</span>
+          <h2>Dr. Tim Harrigan</h2>
+          <div class="dr-credentials">D.C., B.Sc. | Chiropractor and Functional Medicine Practitioner</div>
+
+          <p>Dr. Tim Harrigan brings over 20 years of clinical experience to every patient interaction. He specializes in Erchonia cold laser therapy and is one of the few practitioners in Tucson trained and certified in advanced Erchonia laser protocols.</p>
+
+          <p>His approach is rooted in finding and addressing the root cause of pain and dysfunction rather than simply managing symptoms. Combining chiropractic care with functional medicine, Dr. Harrigan delivers comprehensive, patient-centered treatment plans tailored to each individual.</p>
+
+          <div class="dr-bio-badge">
+            <span>&#127942;</span>
+            <span>Certified in Advanced Erchonia Laser Protocols | One of the few in Tucson</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PHILOSOPHY QUOTE ==================== -->
+  <section class="section philosophy-section" id="philosophy">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 40px;">
+        <span class="section-label section-label-amber">Our Philosophy</span>
+      </div>
+      <div class="quote-box">
+        <span class="quote-mark">&ldquo;</span>
+        <p class="quote-text">Our team is dedicated, loving and welcoming! We pride ourselves on congruency and can ensure you that we will not ask of you anything we do not personally do ourselves! When you are in our office, not only will you feel like family, you can rest assured that you are in some of the best hands the profession of chiropractic has to offer!</p>
+        <div class="quote-attribution">Dr. Tim Harrigan, D.C., B.Sc.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== STAFF GRID ==================== -->
+  <section class="section staff-section" id="our-staff">
+    <div class="section-inner">
+      <div class="staff-section-header">
+        <span class="section-label">Our Clinical Staff</span>
+        <h2>The People Behind Your Care</h2>
+        <p style="color:var(--gray); font-size:1rem; max-width:560px; margin:0 auto;">Each member of our team shares the same commitment to your wellbeing and recovery.</p>
+      </div>
+
+      <div class="staff-grid">
+
+        <!-- Kirsten -->
+        <div class="staff-card">
+          <div class="staff-photo-wrap">
+            <img src="../images/a84e9c_daf36e7a77fa4227a6e7eabddbee33ea.jpeg" alt="Kirsten - Front Desk and Patient Coordination" />
+          </div>
+          <div class="staff-info">
+            <div class="staff-name">Kirsten</div>
+            <div class="staff-role">Front Desk and Patient Coordination</div>
+          </div>
+        </div>
+
+        <!-- Stacey Grissom -->
+        <div class="staff-card">
+          <div class="staff-photo-wrap">
+            <img src="../images/a84e9c_2cd1f3e0e2004f138163e2ee8f8749a9.jpg" alt="Stacey Grissom - Clinic Operations" />
+          </div>
+          <div class="staff-info">
+            <div class="staff-name">Stacey Grissom</div>
+            <div class="staff-role">Clinic Operations</div>
+          </div>
+        </div>
+
+        <!-- Sherry -->
+        <div class="staff-card">
+          <div class="staff-photo-wrap" style="background:linear-gradient(135deg,#00505A,#1A1F2E);display:flex;flex-direction:column;align-items:center;justify-content:center;">
+            <div style="font-size:3rem;">👩‍⚕️</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:0.7rem;margin-top:0.5rem;">Photo pending</div>
+          </div>
+          </div>
+          <div class="staff-info">
+            <div class="staff-name">Sherry</div>
+            <div class="staff-role">Patient Care Assistant</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TEAM CTA ==================== -->
+  <section class="team-cta">
+    <h2>Ready to Meet Us in Person?</h2>
+    <p>Book your free consultation today. No commitment, no pressure. Just expert care from a team that genuinely cares about you.</p>
+    <div class="cta-actions">
+      <a href="tel:5208188857" class="btn btn-primary btn-lg">&#128222; Call (520) 818-8857</a>
+      <a href="contact-us.html" class="btn btn-outline btn-lg">Book Online</a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer-logo">
+          <img src="../images/a84e9c_5b9fcd41bad5410c92019be36ad32553.png" alt="Synergy Wellness" />
+        </div>
+        <p class="footer-tagline">Tucson's only FDA-cleared Erchonia Laser Clinic. Non-invasive, drug-free pain relief backed by clinical science.</p>
+        <img src="../images/a84e9c_1f5160d078ba42a5bde9f95aed41ccad.png" alt="5-Star Rated" style="height:44px; width:auto; margin-top:8px;" />
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="erchonia-laser.html">FX Lasers</a></li>
+          <li><a href="gvl.html">GVL</a></li>
+          <li><a href="onlyclass2lasers.html">Class 2 Lasers Only</a></li>
+          <li><a href="research.html">Research</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Locations -->
+      <div>
+        <div class="footer-col-title">Our Locations</div>
+        <div class="footer-address">
+          <strong>Grant Road</strong><br />
+          6015 E. Grant Road<br />
+          Tucson, AZ 85712<br />
+          <a href="tel:5208188857">(520) 818-8857</a>
+        </div>
+        <div class="footer-address">
+          <strong>La Canada</strong><br />
+          11115 N La Canada Dr #155<br />
+          Tucson, AZ 85737<br />
+          <a href="tel:5205050550">(520) 505-0550</a>
+        </div>
+        <div class="footer-address">
+          <strong>Hours:</strong><br />
+          By Appointment Only<br />
+          Monday through Friday
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-legal">&copy; 2026 Synergy Wellness | Tucson Laser Therapy. All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="index.html">Terms of Service</a>
+        <a href="contact-us.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CLOSEBOT CHAT WIDGET ==================== -->
+  <div id="closebot-widget" style="position:fixed;bottom:52px;right:20px;z-index:998;">
+    <div id="chat-bubble" onclick="toggleChat()" style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#0073CF,#00505A);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,115,207,0.5);font-size:1.5rem;color:white;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">&#128172;</div>
+    <div id="chat-window" style="display:none;position:absolute;bottom:70px;right:0;width:320px;background:white;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.2);overflow:hidden;font-family:'Inter',sans-serif;">
+      <div style="background:linear-gradient(135deg,#00505A,#0073CF);padding:1rem;color:white;">
+        <div style="font-weight:700;font-size:1rem;">Synergy Wellness AI Assistant</div>
+        <div style="font-size:0.75rem;opacity:0.85;">Powered by CloseBot &mdash; Available 24/7</div>
+      </div>
+      <div id="chat-messages" style="padding:1rem;height:200px;overflow-y:auto;background:#f8f9fa;">
+        <div style="background:white;border-radius:10px;padding:0.75rem;margin-bottom:0.5rem;font-size:0.85rem;box-shadow:0 1px 4px rgba(0,0,0,0.08);line-height:1.5;">Hi! I am the Synergy Wellness AI assistant. I can help you book a free consultation, answer questions about laser therapy, or tell you about our locations. How can I help you today?</div>
+      </div>
+      <div style="padding:0.75rem;border-top:1px solid #e5e7eb;display:flex;gap:0.5rem;">
+        <input id="chat-input" type="text" placeholder="Type your question..." style="flex:1;border:1px solid #e5e7eb;border-radius:8px;padding:0.5rem 0.75rem;font-size:0.85rem;outline:none;font-family:inherit;">
+        <button onclick="sendMessage()" style="background:#0073CF;color:white;border:none;border-radius:8px;padding:0.5rem 0.75rem;cursor:pointer;font-weight:600;font-size:0.85rem;">Send</button>
+      </div>
+      <div style="padding:0.5rem;text-align:center;font-size:0.7rem;color:#9ca3af;border-top:1px solid #f3f4f6;">
+        Powered by <a href="https://closebot.ai?fpr=richard" target="_blank" rel="noopener noreferrer" style="color:#0073CF;font-weight:600;text-decoration:none;">CloseBot AI</a> &nbsp;|&nbsp; <a href="https://closebot.ai?fpr=richard" target="_blank" rel="noopener noreferrer" style="color:#0073CF;text-decoration:none;">Get it for your practice</a>
+      </div>
+    </div>
+  </div>
+  <script>
+  function toggleChat(){var w=document.getElementById('chat-window');w.style.display=w.style.display==='none'?'block':'none';if(w.style.display==='block')document.getElementById('chat-input').focus();}
+  var faqs={book:'Great! Book your FREE consultation by calling (520) 818-8857 or clicking the Book button at the top of this page. We are open Monday through Friday by appointment.',consultation:'Your first consultation is completely free with no commitment. Dr. Harrigan will review your health history and determine if laser therapy is right for you.',cost:'We offer a free initial consultation at no charge. Treatment costs vary by individual needs. Call (520) 818-8857 for full pricing details.',location:'We have two Tucson locations: 6015 E. Grant Road, (520) 818-8857 and 11115 N La Canada Dr #155, (520) 505-0550. Both are open Monday through Friday by appointment.',pain:'Erchonia laser therapy effectively treats chronic pain, back pain, plantar fasciitis, sports injuries, post-surgery recovery and many more conditions, with zero side effects.',safe:'Erchonia lasers have been used for over 25 years with 9,500+ published studies and zero recorded side effects. Completely non-invasive and drug-free.',fda:'Erchonia holds 21 of the 24 FDA clearances given to low-level lasers, more than any other brand. Dr. Harrigan uses only Erchonia Class 2 lasers.',default:'Thanks for your question! For the most accurate answer please call (520) 818-8857 or use the Book button above to schedule your free consultation.'};
+  function sendMessage(){var input=document.getElementById('chat-input');var msgs=document.getElementById('chat-messages');var text=input.value.trim();if(!text)return;msgs.innerHTML+='<div style="text-align:right;margin-bottom:0.5rem;"><span style="background:#0073CF;color:white;border-radius:10px;padding:0.5rem 0.75rem;font-size:0.85rem;display:inline-block;">'+text+'</span></div>';var lower=text.toLowerCase();var reply=faqs.default;if(lower.includes('book')||lower.includes('appoint')||lower.includes('schedule'))reply=faqs.book;else if(lower.includes('consult')||lower.includes('free'))reply=faqs.consultation;else if(lower.includes('cost')||lower.includes('price')||lower.includes('much'))reply=faqs.cost;else if(lower.includes('location')||lower.includes('address')||lower.includes('where'))reply=faqs.location;else if(lower.includes('pain')||lower.includes('condition')||lower.includes('treat'))reply=faqs.pain;else if(lower.includes('safe')||lower.includes('side'))reply=faqs.safe;else if(lower.includes('fda')||lower.includes('clear')||lower.includes('approv'))reply=faqs.fda;setTimeout(function(){msgs.innerHTML+='<div style="background:white;border-radius:10px;padding:0.75rem;margin-bottom:0.5rem;font-size:0.85rem;box-shadow:0 1px 4px rgba(0,0,0,0.08);line-height:1.5;">'+reply+'</div>';msgs.scrollTop=msgs.scrollHeight;},600);input.value='';msgs.scrollTop=msgs.scrollHeight;}
+  document.getElementById('chat-input').addEventListener('keypress',function(e){if(e.key==='Enter')sendMessage();});
+  </script>
+
+  <!-- ==================== DEMO BANNER ==================== -->
+  <div class="demo-banner">
+    FREE DEMO REDESIGN by <span>Richard Lobres</span> &nbsp;|&nbsp; This is what your site could look like.
+  </div>
+
+</body>
+</html>
