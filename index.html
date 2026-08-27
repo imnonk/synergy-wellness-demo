@@ -114,7 +114,7 @@
       top: calc(100% + 8px);
       left: 0;
       min-width: 220px;
-      background: #ffffff !important;
+      background: #ffffff;
       border-radius: 10px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.08);
       padding: 8px 0;
@@ -136,26 +136,18 @@
       transform: translateY(0);
     }
 
-    /* Force reset ALL link styles inside dropdown */
-    .dropdown,
-    .dropdown * {
-      color: #1A1F2E !important;
-      text-decoration: none !important;
-    }
-
     .dropdown li a {
       display: block;
       padding: 10px 20px;
       font-size: 0.875rem;
       font-weight: 500;
-      color: #1A1F2E !important;
-      text-decoration: none;
+      color: var(--text);
       transition: background 0.15s, color 0.15s;
     }
 
     .dropdown li a:hover {
-      background: #f0f4f8 !important;
-      color: #00505A !important;
+      background: var(--light);
+      color: var(--teal);
     }
 
     .header-actions {
@@ -1160,24 +1152,6 @@
 
     section, .section, .section-inner, footer, header {
       overflow-x: hidden;
-    }
-  
-    /* Nuclear reset: force all dropdown content to dark on white */
-    .dropdown { color: #1A1F2E !important; }
-    .dropdown a,
-    .dropdown li,
-    .dropdown li a,
-    .dropdown li a:link,
-    .dropdown li a:visited,
-    .dropdown li a:hover,
-    .dropdown li a:active {
-      color: #1A1F2E !important;
-      text-decoration: none !important;
-      background-color: transparent;
-    }
-    .dropdown li a:hover {
-      background-color: #f0f4f8 !important;
-      color: #00505A !important;
     }
   </style>
 </head>
