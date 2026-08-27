@@ -48,6 +48,7 @@
       z-index: 1000;
       background: var(--dark);
       box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+      overflow: visible;
     }
 
     .header-top {
@@ -1192,7 +1193,15 @@
 
           <li><a href="reviews.html">Reviews</a></li>
           <li><a href="our-team.html">Our Team</a></li>
-          <li><a href="forms.html">Forms</a></li>
+          <li>
+            <span tabindex="0">Forms</span>
+            <ul class="dropdown">
+              <li><a href="forms.html">Patient Forms Hub</a></li>
+              <li><a href="https://www.tucsonlasertherapy.com/newmemberform" target="_blank" rel="noopener">New Member Form</a></li>
+              <li><a href="https://www.tucsonlasertherapy.com/copy-of-new-member-form" target="_blank" rel="noopener">New Member (Medicare)</a></li>
+              <li><a href="https://www.tucsonlasertherapy.com/newmemberchildrensforms" target="_blank" rel="noopener">New Member (Children)</a></li>
+            </ul>
+          </li>
           <li><a href="contact-us.html">Contact Us</a></li>
         </ul>
       </nav>
